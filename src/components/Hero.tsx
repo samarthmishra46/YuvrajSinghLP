@@ -93,7 +93,7 @@ const Hero: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                <div className="max-w-sm bg-[#F4F2EE] rounded-2xl  p-4">
+                <div className="max-w-sm bg-[#F4F2EE] rounded-2xl  p-4 mb-3">
                   <h3 className="font-bold">Consulted 30+</h3>
                   <p>
                     D2C Shark Tank brands, VC-backed startups, bootstrapped
@@ -101,15 +101,15 @@ const Hero: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="flex grid-cols-3">
-                  <div className="max-w-sm bg-[#F4F2EE] rounded-2xl  p-4">
+                <div className="flex grid-cols-3 mt-1">
+                  <div className="max-w-sm bg-[#F4F2EE] rounded-2xl mr-2  p-4">
                     <h3>
                       <p className="font-bold">5 + Years </p>
                       of Doing Creative Strategy & Performance Marketing
                     </h3>
                   </div>
 
-                  <div className="max-w-sm bg-[#F4F2EE] rounded-2xl  p-4">
+                  <div className="max-w-sm bg-[#F4F2EE] rounded-2xl mr-2 p-4">
                     <h3>
                       <p className="font-bold">1000 </p>
                       Meta Ads Ideated, Written & Directed
@@ -126,9 +126,7 @@ const Hero: React.FC = () => {
                       <div className="gap-0">
                         <FaMeta size={60} className="p-4 text-blue-600" />
 
-                        <span className="text-blue-600 font-semibold text-xl mt-2 tracking-wide">
-                          Meta
-                        </span>
+                       
                       </div>
 
                       <span className="text-2xl">🚀</span>

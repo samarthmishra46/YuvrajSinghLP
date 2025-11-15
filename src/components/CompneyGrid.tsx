@@ -28,7 +28,7 @@ const companies: Company[] = [
 
 const CompanyGrid: React.FC = () => {
   return (
-    <div className="py-10 bg-gray-50 rounded-lg shadow overflow-hidden">
+    <div className="py-10 bg-gray-50 rounded-lg shadow overflow-hidden md:mt-12">
       <p className="text-2xl font-bold text-center justify-center"> Brands I’ve Worked With
 
 </p>
