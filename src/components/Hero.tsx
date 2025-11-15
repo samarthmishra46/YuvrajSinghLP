@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
               <div className="w-16 h-1 bg-gray-300 rounded-full"></div>
             </div>
 
-            <h1 className="text-2xl font-semibold sm:text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight text-center">
+            <h1 className="text-2xl font-semibold sm:text-4xl md:text-5xl  mb-6 leading-tight text-center">
               Hire The Same Brain Behind
               <br />
               Ads That Generated{" "}

@@ -1,37 +1,65 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Play } from "lucide-react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
 interface VideoCardProps {
-  image: string;
+  videoId: string;
+  thumbnail: string;
   amount: string;
   roas: string;
 }
 
-const VideoCard: React.FC<VideoCardProps> = ({ image, amount, roas }) => {
+const VideoCard: React.FC<
+  VideoCardProps & { isPlaying: boolean; onPlay: () => void }
+> = ({ videoId, thumbnail, amount, roas, isPlaying, onPlay }) => {
   return (
     <motion.div
-      className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-[360px] lg:max-w-[400px] rounded-2xl shadow-2xl bg-white overflow-hidden border border-gray-200 mx-auto"
+      className="w-full max-w-[320px] md:max-w-[360px] lg:max-w-[400px] 
+        mx-auto rounded-2xl shadow-2xl bg-white overflow-hidden border border-gray-200"
       initial={{ opacity: 0, scale: 0.9, x: 100 }}
       animate={{ opacity: 1, scale: 1, x: 0 }}
       exit={{ opacity: 0, scale: 0.9, x: -100 }}
       transition={{ duration: 0.5, ease: "easeInOut" }}
     >
-      {/* TOP: Thumbnail - 9:16 aspect ratio (portrait video) */}
-      <div className="w-full aspect-[9/16] relative">
-        <img src={image} alt="Ad preview" className="w-full h-full object-cover" />
+      {/* Video / Thumbnail */}
+      <div className="w-full aspect-[9/16] relative bg-black">
+        {!isPlaying ? (
+          <div
+            className="relative w-full h-full cursor-pointer"
+            onClick={onPlay}
+          >
+            <img src={thumbnail} className="w-full h-full object-cover" />
+
+            {/* Play Button */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="bg-white/70 w-20 h-20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                <Play size={40} className="text-black ml-1" />
+              </div>
+            </div>
+          </div>
+        ) : (
+          <iframe
+            src={`https://player.vimeo.com/video/${videoId}?autoplay=1`}
+            className="w-full h-full"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        )}
       </div>
 
-      {/* BOTTOM: Stats */}
-      <div className="p-4 md:p-5 bg-gray-50">
+      {/* Stats */}
+      <div className="p-4 bg-gray-50">
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <p className="font-semibold text-gray-600 text-xs md:text-sm mb-1">Amount spent</p>
-            <p className="text-lg md:text-xl font-bold text-gray-900">{amount}</p>
+            <p className="font-semibold text-gray-600 text-sm mb-1">
+              Amount spent
+            </p>
+            <p className="text-xl font-bold text-gray-900">{amount}</p>
           </div>
           <div>
-            <p className="font-semibold text-gray-600 text-xs md:text-sm mb-1">ROAS</p>
-            <p className="text-lg md:text-xl font-bold text-green-600">{roas}</p>
+            <p className="font-semibold text-gray-600 text-sm mb-1">ROAS</p>
+            <p className="text-xl font-bold text-green-600">{roas}</p>
           </div>
         </div>
       </div>
@@ -46,15 +74,18 @@ interface CarouselProps {
 export const VideoCarousel: React.FC<CarouselProps> = ({ items }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
 
-  // Auto-play: change slide every 2 seconds
+  // Auto play 20 seconds — only when NOT playing video
   useEffect(() => {
+    if (isPlaying) return;
+
     const timer = setInterval(() => {
       goToNext();
-    }, 2000);
+    }, 20000);
 
     return () => clearInterval(timer);
-  }, [currentIndex]);
+  }, [currentIndex, isPlaying]);
 
   const goToNext = () => {
     setDirection(1);
@@ -72,49 +103,51 @@ export const VideoCarousel: React.FC<CarouselProps> = ({ items }) => {
   };
 
   return (
-    <div className="relative w-full py-8 md:py-12 px-4">
-      {/* Main Card Display */}
-      <div className="relative overflow-hidden">
+    <div className="relative w-full py-10 flex flex-col items-center justify-center">
+      {/* Card */}
+      <div className="relative overflow-hidden w-full flex justify-center">
         <AnimatePresence mode="wait" custom={direction}>
           <VideoCard
             key={currentIndex}
-            image={items[currentIndex].image}
+            videoId={items[currentIndex].videoId}
+            thumbnail={items[currentIndex].thumbnail}
             amount={items[currentIndex].amount}
             roas={items[currentIndex].roas}
+            isPlaying={isPlaying}
+            onPlay={() => setIsPlaying(true)}
           />
         </AnimatePresence>
       </div>
 
-      {/* Navigation Arrows */}
-      <button
-        onClick={goToPrev}
-        className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-3 md:p-4 rounded-full shadow-lg transition-all hover:scale-110 z-10"
-        aria-label="Previous ad"
-      >
-        <FaChevronLeft className="w-4 h-4 md:w-5 md:h-5" />
-      </button>
-
-      <button
-        onClick={goToNext}
-        className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-3 md:p-4 rounded-full shadow-lg transition-all hover:scale-110 z-10"
-        aria-label="Next ad"
-      >
-        <FaChevronRight className="w-4 h-4 md:w-5 md:h-5" />
-      </button>
-
-      {/* Dot Indicators */}
-      <div className="flex justify-center gap-2 mt-6">
-        {items.map((_, index) => (
+      {/* Arrows */}
+      {!isPlaying && (
+        <>
           <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className={`transition-all duration-300 rounded-full ${
-              index === currentIndex
-                ? "w-8 md:w-10 h-2 md:h-2.5 bg-purple-600"
-                : "w-2 md:w-2.5 h-2 md:h-2.5 bg-gray-300 hover:bg-gray-400"
+            onClick={goToPrev}
+            className="absolute left-3 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-lg"
+          >
+            <FaChevronLeft />
+          </button>
+
+          <button
+            onClick={goToNext}
+            className="absolute right-3 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-lg"
+          >
+            <FaChevronRight />
+          </button>
+        </>
+      )}
+
+      {/* Dots */}
+      <div className="flex justify-center gap-2 mt-6">
+        {items.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => goToSlide(i)}
+            className={`h-2 rounded-full transition-all ${
+              i === currentIndex ? "w-8 bg-purple-600" : "w-2 bg-gray-300"
             }`}
-            aria-label={`Go to ad ${index + 1}`}
-          />
+          ></button>
         ))}
       </div>
     </div>

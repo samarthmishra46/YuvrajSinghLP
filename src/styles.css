@@ -19,7 +19,11 @@
   }
   
   .btn-primary {
-    @apply bg-primary hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 flex items-center gap-2;
+    @apply bg-primary hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 flex items-center gap-2 ;
+  }
+
+  .btn-primary2 {
+    @apply bg-primary hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-full  duration-300  items-center gap-2 ;
   }
   
   .gradient-text {

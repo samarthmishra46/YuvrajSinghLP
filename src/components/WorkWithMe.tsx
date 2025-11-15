@@ -4,7 +4,7 @@ import VideoCarousel from './AnimatedCard';
 const WorkWithMe: React.FC = () => {
   const videoData = [
   {
-    image: "https://res.cloudinary.com/dvxqb1wge/image/upload/v1755359134/go_wheelo_quqgxp.gif",
+    image: "https://player.vimeo.com/video/1137209274?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
     amount: "₹726,924.31",
     roas: "12.99",
   },
@@ -125,7 +125,7 @@ const WorkWithMe: React.FC = () => {
         {services.map((service, index) => (
           <div key={index} className="mb-16 ">
             <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
                 {service.title}
               </h2>
               <p className="text-lg md:text-xl font-semibold mb-4 max-w-3xl mx-auto">

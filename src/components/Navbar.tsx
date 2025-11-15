@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { MoveRight } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,26 +18,26 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold gradient-text">YSR</h1>
+            <h1 className="text-2xl font-bold gradient-text">Yuvraj Singh Rajwat</h1>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             <button
               onClick={() => scrollToSection('home')}
-              className="text-gray-700 hover:text-primary transition-colors font-medium"
+              className="text-gray-700 hover:text-primary transition-colors font-semibold"
             >
               Home
             </button>
             <button
               onClick={() => scrollToSection('about')}
-              className="text-gray-700 hover:text-primary transition-colors font-medium"
+              className="text-gray-700 hover:text-primary transition-colors font-semibold"
             >
               About Me
             </button>
             <button
               onClick={() => scrollToSection('work')}
-              className="text-gray-700 hover:text-primary transition-colors font-medium"
+              className="text-gray-700 hover:text-primary transition-colors font-semibold"
             >
               What We Do
             </button>
@@ -93,26 +94,40 @@ const Navbar: React.FC = () => {
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-t">
-          <div className="px-2 pt-2 pb-3 space-y-1">
+        <div className="md:hidden bg-white border-t justify-center">
+          <div className="px-2 pt-2 pb-3 space-y-1 font-semibold justify-center items-center ">
             <button
               onClick={() => scrollToSection('home')}
-              className="block w-full text-left px-3 py-2 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
+              className="block w-full  px-3 py-2 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md text-center"
             >
               Home
             </button>
             <button
               onClick={() => scrollToSection('about')}
-              className="block w-full text-left px-3 py-2 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
+              className="block w-full  px-3 py-2 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md text-center"
             >
               About Me
             </button>
             <button
               onClick={() => scrollToSection('work')}
-              className="block w-full text-left px-3 py-2 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
+              className="block w-full text-center px-3 py-2 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
             >
-              Work With Me
+              What We Do
             </button>
+            {/* CTA Button Desktop */}
+          <div className='  items-center gap-2 justify-center text-center'>
+                        <button
+              onClick={() => scrollToSection('work')}
+              className="btn-primary2 inline-flex items-center text-right justify-center items-center"
+            >
+              <span>Work With Me </span>
+              
+              <MoveRight  />
+             
+            </button>
+          </div>
+
+          
           </div>
         </div>
       )}
