@@ -12,7 +12,7 @@ const About: React.FC = () => {
           </div>
           <br />
 
-           <div className="order-2 md:order-2 flex justify-center md:mt-10 mb-32">
+           <div className="order-2 md:order-2 flex justify-center md:mt-10 mb-2 md:mb-32">
             {/* Scale wrapper */}
             <div className="md:scale-[1.25]">
               <div className="w-full max-w-sm">
@@ -89,52 +89,62 @@ const About: React.FC = () => {
 
           {/* Professional Summary */}
           <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
-            <h3 className="text-3xl font-bold mb-6">Professional Summary</h3>
-            <div className="space-y-4 text-gray-700 leading-relaxed">
-              <p className="text-lg">
-                If I had to sum up my professional journey, it wouldn't start with marketing; it would start with storytelling – because I was that weird 18-year-old who built a media agency just because they liked to tell stories.
-              </p>
-              <p className="text-lg">
-                I just knew one thing – I could think. And that was all pushed me across some of the failed world.
-              </p>
-              <p className="text-lg">
-                <span className="font-semibold">Then turned into a "hack."</span>
-              </p>
-              <p className="text-lg">
-                I wrote from one of Agencies where the only real job was scrolling in feeds – browsing Meta, Instagram, Tiktok, and X. Yes, 2024 happened.
-              </p>
-              <p className="text-lg">
-                <span className="font-semibold">And just, I found exactly what to make content for their Income Marketers.</span>
-              </p>
-              <p className="text-lg">
-                In months context of agencies where the only 30+ Agencies talented people who create powerhouses with 30+ Agencies talented people who treats creative as I filter for depends on every scroll.
-              </p>
-              <p className="text-lg">
-                <span className="font-semibold">We scale D2C and e-commerce brands with ads that principles scale manage, working with funded companies who know how to scale without burning money.</span>
-              </p>
-              <p className="text-lg">
-                And then, there's my "other" company – creative storytelling = Being – creative = scaling creative them into predictable growth.
-              </p>
-              <p className="text-lg font-semibold">
-                And yeah.
-              </p>
-              <p className="text-lg">
-                In turn creative ideas into predictable growth.
-              </p>
-              <p className="text-lg">
-                And profit.
-              </p>
-              <p className="text-lg">
-                Because for me, it never felt like work. I like to think up my creative that connect. ROAS that believes, a content engine strong enough to scale without grinding.
-              </p>
-              <p className="text-lg">
-                Some people make ads.
-              </p>
-              <p className="text-lg font-semibold">
-                I turn creative ideas into predictable growth.
-              </p>
-            </div>
-          </div>
+  <h3 className="text-3xl font-bold mb-6">Professional Summary</h3>
+
+  <div className="space-y-4 text-gray-700 leading-relaxed">
+    <p className="text-lg">
+      If I had to sum up my professional journey, it wouldn’t start in marketing with some grand vision or fancy plan. 
+      I just knew one thing — <span className="font-semibold">I could think.</span> 
+      And that one skill pushed me across every corner of the digital world: copywriting, growth, funnels, performance, scripts — you name it. 
+      I kept figuring things out on the go… and plot twist: it worked.
+    </p>
+
+    <p className="text-lg">
+      I went from writing telesales scripts at Adda247, to acquiring 30,000 paying customers a month at Insane Marketers, 
+      to creating content at agencies where the only real job description was <span className="italic">“make it work.”</span>
+    </p>
+
+    <p className="text-lg font-semibold">
+      And then 2024 happened.
+    </p>
+
+    <p className="text-lg">
+      A friend casually asked me to make content for their ads.  
+      One project turned into ten.  
+      Ten turned into an agency.  
+      And before I knew it — <span className="font-semibold">Yuvichaar Funnels</span> was born.
+    </p>
+
+    <p className="text-lg">
+      Today, that “accident” has become a full-fledged creative powerhouse with 
+      <span className="font-semibold"> 30+ insanely talented people</span> 
+      who create content as if their life depends on every hook, angle, and edit.  
+      We scale D2C and ecommerce brands with ads that genuinely print money, working with funded companies on 
+      <span className="font-semibold"> 7-figure monthly retainers.</span>
+    </p>
+
+    <p className="text-lg">
+      My journey has been a loop of:  
+      <span className="font-semibold">learning → simplifying → fixing → creating → scaling → repeating.</span>
+    </p>
+
+    <p className="text-lg">
+      I’ve built my entire career on one ability:  
+      <span className="font-semibold">to turn creative chaos into predictable growth.</span>
+    </p>
+
+    <p className="text-lg">
+      And now?  
+      I’m the guy brands call when they need creatives that convert, ROAS that behaves, 
+      and a content engine strong enough to scale without crashing.
+    </p>
+
+    <p className="text-lg font-semibold">
+      If you’re building something ambitious and want creative that doesn’t just look good but actually performs — we should talk.
+    </p>
+  </div>
+</div>
+
 
           {/* CTA Section */}
           <div className="text-center mt-12">

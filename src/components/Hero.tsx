@@ -15,14 +15,14 @@ const Hero: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Two column layout: text + photo. Stacks on small screens (375px) */}
-        <div className="grid grid-cols-1 gap-8 items-center">
+        <div className="grid grid-cols-1 gap-4 items-center">
           {/* Left: Text and CTAs */}
           <div className="order-2 md:order-1 text-center md:text-left">
-            <div className="mb-6 flex justify-center md:justify-start">
+            <div className="mb-3 flex justify-center md:justify-start">
               <div className="w-16 h-1 bg-gray-300 rounded-full"></div>
             </div>
 
-            <h1 className="text-2xl font-semibold sm:text-4xl md:text-5xl  mb-6 leading-tight text-center">
+            <h1 className="text-2xl font-semibold sm:text-4xl md:text-5xl  mb-6 leading-tight text-left  md:text-center">
               Hire The Same Brain Behind
               <br />
               Ads That Generated{" "}
@@ -37,7 +37,7 @@ const Hero: React.FC = () => {
             </h1>
 
             <div className="flex flex-col sm:flex-row gap-4 items-center justify-center ">
-              <button onClick={scrollToWork} className="btn-primary">
+              <button onClick={scrollToWork} className="btn-primary mb-1">
                 Work With Me
                 <svg
                   className="w-5 h-5"
@@ -54,9 +54,8 @@ const Hero: React.FC = () => {
                 </svg>
               </button>
             </div>
-            <br />
-
-            <p className="text-sm text-center text-gray-600 mb-6">
+            
+            <p className="text-sm text-center text-gray-600 mb-3">
               Let Me Ideate Your Next Ad Campaign On Meta
             </p>
           </div>
@@ -104,14 +103,14 @@ const Hero: React.FC = () => {
                 <div className="flex grid-cols-3 mt-1">
                   <div className="max-w-sm bg-[#F4F2EE] rounded-2xl mr-2  p-4">
                     <h3>
-                      <p className="font-bold">5 + Years </p>
+                      <p className="font-bold ">5 + Years </p>
                       of Doing Creative Strategy & Performance Marketing
                     </h3>
                   </div>
 
                   <div className="max-w-sm bg-[#F4F2EE] rounded-2xl mr-2 p-4">
                     <h3>
-                      <p className="font-bold">1000 </p>
+                      <p className="font-bold">1000+</p>
                       Meta Ads Ideated, Written & Directed
                     </h3>
                   </div>
@@ -124,12 +123,12 @@ const Hero: React.FC = () => {
 
                     <div className="flex items-center gap-1">
                       <div className="gap-0">
-                        <FaMeta size={60} className="p-4 text-blue-600" />
+                        <FaMeta size={30} className=" text-blue-600" />
 
                        
                       </div>
 
-                      <span className="text-2xl">🚀</span>
+                      <span className="text-xl md:text:2xl">🚀</span>
                     </div>
                   </div>
                 </div>

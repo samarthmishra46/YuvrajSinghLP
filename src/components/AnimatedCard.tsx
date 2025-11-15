@@ -3,87 +3,110 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Play } from "lucide-react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
+// --------------------
+// Correct interface for YOUR data
+// --------------------
 interface VideoCardProps {
-  videoId: string;
-  thumbnail: string;
+  image: string; 
   amount: string;
   roas: string;
 }
 
+// --------------------
+// VIDEO CARD COMPONENT
+// --------------------
 const VideoCard: React.FC<
   VideoCardProps & { isPlaying: boolean; onPlay: () => void }
-> = ({ videoId, thumbnail, amount, roas, isPlaying, onPlay }) => {
+> = ({ image, amount, roas, isPlaying, onPlay }) => {
+
+  const isVimeo = image.includes("player.vimeo.com");
+
   return (
     <motion.div
-      className="w-full max-w-[320px] md:max-w-[360px] lg:max-w-[400px] 
-        mx-auto rounded-2xl shadow-2xl bg-white overflow-hidden border border-gray-200"
+      className="w-full max-w-[320px] md:max-w-[360px] lg:max-w-[400px] mx-auto 
+      rounded-2xl shadow-2xl bg-white overflow-hidden border border-gray-200"
       initial={{ opacity: 0, scale: 0.9, x: 100 }}
       animate={{ opacity: 1, scale: 1, x: 0 }}
       exit={{ opacity: 0, scale: 0.9, x: -100 }}
       transition={{ duration: 0.5, ease: "easeInOut" }}
     >
-      {/* Video / Thumbnail */}
-      <div className="w-full aspect-[9/16] relative bg-black">
-        {!isPlaying ? (
-          <div
-            className="relative w-full h-full cursor-pointer"
-            onClick={onPlay}
-          >
-            <img src={thumbnail} className="w-full h-full object-cover" />
 
-            {/* Play Button */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="bg-white/70 w-20 h-20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                <Play size={40} className="text-black ml-1" />
-              </div>
-            </div>
-          </div>
-        ) : (
-          <iframe
-            src={`https://player.vimeo.com/video/${videoId}?autoplay=1`}
-            className="w-full h-full"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        )}
-      </div>
-
-      {/* Stats */}
+      {/* STAT BOX */}
       <div className="p-4 bg-gray-50">
         <div className="grid grid-cols-2 gap-4">
+          
           <div>
-            <p className="font-semibold text-gray-600 text-sm mb-1">
-              Amount spent
-            </p>
+            <p className="font-semibold text-gray-600 text-sm mb-1">Amount spent</p>
             <p className="text-xl font-bold text-gray-900">{amount}</p>
           </div>
+
           <div>
             <p className="font-semibold text-gray-600 text-sm mb-1">ROAS</p>
             <p className="text-xl font-bold text-green-600">{roas}</p>
           </div>
+
         </div>
+      </div> 
+      
+      {/* VIDEO / THUMBNAIL */}
+      <div className="w-full aspect-[9/16] relative bg-black">
+        
+        {/* When NOT playing → show thumbnail */}
+        {!isPlaying ? (
+          <div className="relative w-full h-full cursor-pointer" onClick={onPlay}>
+            <img src={image} className="w-full h-full object-cover" />
+
+            {/* Play Button only for Vimeo */}
+            {isVimeo && (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="bg-white/70 w-20 h-20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                  <Play size={40} className="text-black ml-1" />
+                </div>
+              </div>
+            )}
+          </div>
+        ) : (
+          
+          // When playing → load Vimeo iframe
+          isVimeo ? (
+            <iframe
+              src={`${image}?autoplay=1`}
+              className="w-full h-full"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          ) : (
+
+            // If not Vimeo (= GIF), just show GIF
+            <img src={image} className="w-full h-full object-cover" />
+          )
+        )}
       </div>
+
+      
+
     </motion.div>
   );
 };
 
+// --------------------
+// MAIN CAROUSEL
+// --------------------
 interface CarouselProps {
   items: VideoCardProps[];
 }
 
 export const VideoCarousel: React.FC<CarouselProps> = ({ items }) => {
+  
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  // Auto play 20 seconds — only when NOT playing video
+  // -------- AUTO SLIDE (STOPS when playing) --------
   useEffect(() => {
     if (isPlaying) return;
 
-    const timer = setInterval(() => {
-      goToNext();
-    }, 20000);
-
+    const timer = setInterval(goToNext, 20000);
     return () => clearInterval(timer);
   }, [currentIndex, isPlaying]);
 
@@ -97,29 +120,31 @@ export const VideoCarousel: React.FC<CarouselProps> = ({ items }) => {
     setCurrentIndex((prev) => (prev - 1 + items.length) % items.length);
   };
 
-  const goToSlide = (index: number) => {
-    setDirection(index > currentIndex ? 1 : -1);
-    setCurrentIndex(index);
+  const goToSlide = (i: number) => {
+    setDirection(i > currentIndex ? 1 : -1);
+    setCurrentIndex(i);
   };
 
   return (
     <div className="relative w-full py-10 flex flex-col items-center justify-center">
-      {/* Card */}
+
+      {/* CARD */}
       <div className="relative overflow-hidden w-full flex justify-center">
         <AnimatePresence mode="wait" custom={direction}>
+          
           <VideoCard
             key={currentIndex}
-            videoId={items[currentIndex].videoId}
-            thumbnail={items[currentIndex].thumbnail}
+            image={items[currentIndex].image}
             amount={items[currentIndex].amount}
             roas={items[currentIndex].roas}
             isPlaying={isPlaying}
             onPlay={() => setIsPlaying(true)}
           />
+
         </AnimatePresence>
       </div>
 
-      {/* Arrows */}
+      {/* ARROWS */}
       {!isPlaying && (
         <>
           <button
@@ -138,7 +163,7 @@ export const VideoCarousel: React.FC<CarouselProps> = ({ items }) => {
         </>
       )}
 
-      {/* Dots */}
+      {/* DOTS */}
       <div className="flex justify-center gap-2 mt-6">
         {items.map((_, i) => (
           <button
@@ -147,9 +172,10 @@ export const VideoCarousel: React.FC<CarouselProps> = ({ items }) => {
             className={`h-2 rounded-full transition-all ${
               i === currentIndex ? "w-8 bg-purple-600" : "w-2 bg-gray-300"
             }`}
-          ></button>
+          />
         ))}
       </div>
+
     </div>
   );
 };

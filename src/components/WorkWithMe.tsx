@@ -4,32 +4,32 @@ import VideoCarousel from './AnimatedCard';
 const WorkWithMe: React.FC = () => {
   const videoData = [
   {
-    image: "https://player.vimeo.com/video/1137209274?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+    image: "https://player.vimeo.com/video/1137209274",
     amount: "₹726,924.31",
     roas: "12.99",
   },
   {
-    image: "https://res.cloudinary.com/dvxqb1wge/image/upload/v1755359130/arabian_rogpzs.gif",
+    image: "https://player.vimeo.com/video/1137209274",
     amount: "₹512,430.00",
     roas: "7.84",
   },
   {
-    image: "https://res.cloudinary.com/dvxqb1wge/image/upload/v1755357609/asligems_cx9ntn.gif",
+    image: "https://player.vimeo.com/video/1137209274",
     amount: "₹1,12,000.00",
     roas: "18.20",
   },
   {
-    image: "https://res.cloudinary.com/dvxqb1wge/image/upload/v1755443775/Binni_d8smwh.gif",
+    image: "https://player.vimeo.com/video/1137209274",
     amount: "₹1,12,000.00",
     roas: "18.20",
   },
   {
-    image: "https://res.cloudinary.com/dvxqb1wge/image/upload/v1755443771/YHL_thsupk",
+    image: "https://player.vimeo.com/video/1137209274",
     amount: "₹1,12,000.00",
     roas: "18.20",
   },
   {
-    image: "https://res.cloudinary.com/dvxqb1wge/image/upload/v1755506027/fictales_rim5pq.gif",
+    image: "https://player.vimeo.com/video/1137209274",
     amount: "₹1,12,000.00",
     roas: "18.20",
   },
@@ -187,17 +187,16 @@ const WorkWithMe: React.FC = () => {
       </div>
     
       {/* PROOF SECTION */}
-      <div className="mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+      <div className="mb-2">
+        <h2 className="text-3xl md:text-4xl font-bold text-left md:text-center mb-4 p-4">
           {proofSection.title}
         </h2>
-        <p className="text-center text-gray-600 mb-8">
+        <p className="text-center text-gray-600 mb-2">
           {proofSection.subtitle}
         </p>
         
       </div>
 
-      <br />
               <VideoCarousel items={videoData} />
 
       
@@ -235,11 +234,8 @@ const WorkWithMe: React.FC = () => {
               />
               
             </div>
-          </div>
-
-          <div className="bg-[#404348] text-white rounded-2xl p-6 md:p-8 mb-8 shadow-xl">
             <p className="text-lg md:text-xl leading-relaxed space-y-4">
-              <span className="block mb-4 text-xl md:text-2xl font-bold text-[#8400FF] ">
+              <span className="block mb-4 mt-1 text-xl md:text-2xl font-bold text-[#8400FF] ">
                 Look at this video ad.
               </span>
               
@@ -255,15 +251,23 @@ const WorkWithMe: React.FC = () => {
                 ✅ And ends with a <span className="font-semibold text-[#8400FF] ">relatable mom</span> telling you exactly what to do next.
               </span>
               
-              <span className="block mt-6 p-4 bg-[#9010ad] text-white rounded-xl font-bold text-md md:text-2xl text-center">
-                This is AGC (Actor-Generated Content)
+              <span className="block font-bold text-2xl mb-4">
+                And the format isn’t typical UGC 
+it’s AGC (Actor-Generated Content):
               </span>
+
               
-              <span className="block mt-4 text-center text-gray-300 italic">
-                Scripted like an ad but shot like UGC for high conversion.
+
+              <span className="block mb-4">
+                Scripted like an ad, shot like UGC, performed by a relatable mom, but strategically crafted to hit psychology, pacing, hooks, and objections with precision.
+              </span>
+              <span className="block mb-4">
+                It feels real, but it converts like a high-performance direct-response ad.
               </span>
             </p>
           </div>
+
+         
 
           <div className="text-center space-y-6 bg-white/90 backdrop-blur-sm rounded-2xl p-8 md:p-10 shadow-xl">
             <p className="font-black text-3xl md:text-4xl lg:text-5xl text-gray-900 leading-tight">
@@ -277,16 +281,18 @@ const WorkWithMe: React.FC = () => {
             </p>
           </div>
         </div>
+        
       </div>
 
       {/* PROCESS SECTION */}
-      <div className="mb-16">
-        <h2 className="text-3xl font-bold text-center mb-12">
-          My Process Behind Building Million Dollar Creative Strategies
+
+      <div className="bg-[#404348] text-white mr-2 ml-2  md:ml-20 md:mr-12 rounded-2xl justify-center shadow-lg p-4 mb-10">
+        <h2 className="text-2xl font-bold text-center mb-8">
+           My Process Behind Building Million Dollar Creative Strategies
           Consistently
         </h2>
 
-        <div className="space-y-8 max-w-3xl mx-auto">
+        <div className="max-w-3xl mx-auto space-y-4 ">
           {process.map((item, index) => (
             <div
               key={index}
@@ -297,7 +303,7 @@ const WorkWithMe: React.FC = () => {
                   {item.step}
                 </div>
                 <div>
-                  <h3 className="font-bold text-xl mb-3">{item.title}</h3>
+                  <h3 className="font-bold text-gray-600 text-xl mb-3">{item.title}</h3>
                   <p className="text-gray-600">{item.description}</p>
                 </div>
               </div>
@@ -306,14 +312,17 @@ const WorkWithMe: React.FC = () => {
         </div>
       </div>
 
+
+      
+
       {/* CTA SECTION */}
       <div className="text-center">
         <h2 className="text-3xl font-bold mb-6">
           Starting Today, You'll Never Have To Worry About Meta Ads Ever Again!
         </h2>
 
-        <button className="btn-primary mx-auto text-lg flex items-center gap-2">
-          Work With Me
+        <button type="button" className="btn-primary mx-auto text-lg flex items-center gap-2">
+          <span>Work With Me</span>
           <svg
             className="w-6 h-6"
             fill="none"
