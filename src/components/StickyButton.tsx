@@ -10,7 +10,7 @@ const StickyButton: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-gradient-to-t from-white via-white to-transparent pointer-events-none">
+    <div className="fixed bottom-2  md:bottom-0  left-0 right-0 z-50 p-4 bg-gradient-to-t from-transparent via-white to-transparent pointer-events-none">
       <div className="max-w-md mx-auto pointer-events-auto">
         <button
           onClick={scrollToWork}

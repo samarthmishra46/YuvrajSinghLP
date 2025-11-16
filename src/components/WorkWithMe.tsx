@@ -77,29 +77,27 @@ const WorkWithMe: React.FC = () => {
         },
         {
           icon: "📝",
-          title: "50 Page, No-Filler Ad Scripts + Storyboards",
+          title: "30 Ready-to-Use Ad Scripts + Storyboards",
           description:
-            "Frame-by-frame, creative ready ads to run and watch your revenue soar forever.",
+            "Frame-by-frame, high-performing creative blueprints.",
         },
         {
           icon: "📚",
           title: "Internal Playbook",
           description:
-            "I'll document the why behind every script, and give you the ad formats, angles, and hooks that work for your niche forever.",
+            "I'll document the why behind every decision so your team can keep creating winners forever.",
         },
       ],
     },
   ];
 
   const faqs = [
-    "What kind of ads should I create (still image vs. video vs. carousel)?",
-    "What is the best communication angle for my product category?",
-    "Should I use User Generated Content (UGC) to identify it for your brand?",
-    "What are the best ideas on my brand ideas for maximum conversions?",
-    "Which POV should I use?",
-    "Should I use Educational or Sales Content?",
-    "Why are cheaper, simpler creatives better?",
-    "Why exactly is money leaking in my Meta Ads right now (honest diagnosis of what's actually failing and how to fix it dramatically).",
+    " What Kind Of Ads Should I create right now to get the fastest revenue jump this week, this month?  (I'll identify your lowest hanging fruits)",
+    "What is the single strongest communication angle for my product category? - This one angle can multiply your ROAS instantly.I'll identify it for your brand.",
+    "Which ad formats should my brand focus on for maximum conversions?UGC, VSL, founder POV, testimonial, skit, before-after, reels-style edits — I'll tell you the exact mix your brand should produce to scale fast.",
+    "Why are cheaper, simpler competitor ads beating my expensive shoots? I'll show you the storytelling gap that's killing your performance and how to reverse it with smarter angles and simpler execution.",
+    " Where exactly is money leaking in my funnel — creatives, offer, landing page, or audience? A brutally honest diagnosis of what's actually broken and how to fix it immediately.",
+    
   ];
 
   const process = [
