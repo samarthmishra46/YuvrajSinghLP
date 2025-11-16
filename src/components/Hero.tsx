@@ -79,38 +79,39 @@ const Hero: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="flex grid-cols-3 mt-1">
-                  <div className="max-w-sm bg-[#F4F2EE] rounded-2xl mr-2  p-2">
-                    <h3 className="text-sm text-shadow-initial">
-                      <p className="font-bold text-base">5 + Years </p>
-                      of Doing Creative Strategy & Performance Marketing
-                    </h3>
-                  </div>
+                <div className="flex gap-2 mt-1">
+  {/* Box 1 */}
+  <div className="bg-[#F4F2EE] rounded-2xl p-2 w-28 aspect-square flex flex-col justify-center">
+    <h3 className="text-sm text-shadow-initial">
+      <p className="font-bold text-base">5 + Years </p>
+      of Doing Creative Strategy & Performance Marketing
+    </h3>
+  </div>
 
-                  <div className="max-w-sm bg-[#F4F2EE] rounded-2xl mr-2 p-2">
-                    <h3 className="text-sm">
-                      <p className="font-bold text-base">1000+</p>
-                      Meta Ads Ideated, Written & Directed
-                    </h3>
-                  </div>
+  {/* Box 2 */}
+  <div className="bg-[#F4F2EE] rounded-2xl p-2 w-28 aspect-square flex flex-col justify-center">
+    <h3 className="text-sm">
+      <p className="font-bold text-base">1000+</p>
+      Meta Ads Ideated, Written & Directed
+    </h3>
+  </div>
 
-                  <div className="max-w-sm bg-[#F4F2EE] rounded-2xl  p-4">
-                    <h3 className="text-sm">
-                      <p className="font-bold text-base">INR 70 Cr+ </p>Ad Spend Managed
-                      On Meta Ads{" "}
-                    </h3>
+  {/* Box 3 */}
+  <div className="bg-[#F4F2EE] rounded-2xl p-2 w-28 aspect-square flex flex-col justify-between">
+    <div>
+      <h3 className="text-sm">
+        <p className="font-bold text-base">INR 70 Cr+</p>
+        Ad Spend Managed On Meta Ads
+      </h3>
+    </div>
 
-                    <div className="flex items-center gap-1">
-                      <div className="gap-0">
-                        <FaMeta size={30} className=" text-blue-600" />
+    <div className="flex items-center gap-1 mt-1">
+      <FaMeta size={26} className="text-blue-600" />
+      <span className="text-xl">🚀</span>
+    </div>
+  </div>
+</div>
 
-                       
-                      </div>
-
-                      <span className="text-xl md:text:2xl">🚀</span>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

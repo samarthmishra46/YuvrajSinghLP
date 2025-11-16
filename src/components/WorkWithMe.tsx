@@ -1,7 +1,27 @@
 import React from "react";
+import { useRef,useState } from "react";
 import VideoCarousel from "./AnimatedCard";
 import CTA from "./CTAButton";
 const WorkWithMe: React.FC = () => {
+
+    const videoRef = useRef<HTMLVideoElement>(null);
+  const [muted, setMuted] = useState(true);
+
+  const handleUnmute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = false;
+      videoRef.current.play();
+      setMuted(false);
+    }
+  };
+  const handlemute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = false;
+      videoRef.current.play();
+      setMuted(true);
+    }
+  };
+
   const videoData = [
     {
       image: "https://player.vimeo.com/video/1137209274",
@@ -224,11 +244,32 @@ const WorkWithMe: React.FC = () => {
             </p>
 
             <div className="relative flex justify-center items-center">
-              <img
-                className="rounded-2xl shadow-2xl max-w-full h-auto border-2 border-white"
-                src="https://res.cloudinary.com/dvxqb1wge/image/upload/v1755443775/Binni_d8smwh.gif"
-                alt="Successful ad example"
-              />
+    <video
+        ref={videoRef}
+        className="rounded-2xl shadow-2xl max-w-full h-auto border-2 border-white"
+        src="https://res.cloudinary.com/do7stdrs3/video/upload/v1763291141/science_kit_script_1_szjprt.mp4"
+        autoPlay
+        loop
+        muted={muted}
+        playsInline
+      />
+
+      {muted && (
+        <button
+          onClick={handleUnmute}
+          className="absolute inset-0 flex items-center justify-center bg-black/40 text-white px-4 py-2 rounded-xl"
+        >
+          Tap to Unmute 🔊
+        </button>
+      )}
+      {!muted && (
+        <button
+          onClick={handlemute}
+          className="absolute inset-0 flex items-end justify-center text-white px-4 py-2 rounded-xl"
+        >
+          Tap to mute 🔊
+        </button>
+      )}
 
               <img
                 src="https://res.cloudinary.com/dix4pzu0k/image/upload/v1763152415/Vector_669_e3xtja.png"

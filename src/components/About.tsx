@@ -12,80 +12,82 @@ const About: React.FC = () => {
           </div>
           <br />
 
-           <div className="flex justify-center md:mt-10 mb-2 md:mb-32">
-            {/* Scale wrapper */}
-            <div className="md:scale-[1.25]">
-              <div className="w-full max-w-sm">
-                <div className="flex grid-cols-2 bg-[#404348] rounded-2xl overflow-hidden shadow-2xl mb-4">
-                  <div className="w-full h-64 md:h-90 bg-[#404348] rounded-2xl  overflow-hidden">
-                    <img
-                      src="https://res.cloudinary.com/dix4pzu0k/image/upload/c_crop,w_1492,h_1853,x_708,y_1101/v1763140626/IMG_6887_gm5yk2.jpg"
-                      alt="Yuvraj Singh Rajawat"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+           {/*Photo / Profile card */}
+                     <div className=" flex justify-center mt-1 mb-4 md:mb-22">
+                       {/* Scale wrapper */}
+                       <div className="md:scale-[1.25]">
+                         <div className="w-full max-w-sm">
+                           <div className="flex grid-cols-2 bg-[#404348] rounded-2xl overflow-hidden shadow-2xl mb-4">
+                             <div className="w-full h-64 md:h-90 bg-[#404348] rounded-2xl  overflow-hidden">
+                               <img
+                                 src="https://res.cloudinary.com/dix4pzu0k/image/upload/c_crop,w_1492,h_1853,x_708,y_1101/v1763140626/IMG_6887_gm5yk2.jpg"
+                                 alt="Yuvraj Singh Rajawat"
+                                 className="w-full h-full object-cover"
+                               />
+                             </div>
+           
+                             <div className=" grid-rows-2 mt-1 ml-2 text-white">
+                               <div>
+                                 <h3 className="text-lg md:text-xl font-bold mb-2 mr-2 whitespace-nowrap mt-3">
+                                   Yuvraj Singh Rajawat
+                                 </h3>
+                               </div>
+           
+                               <div className=" justify-center">
+                                 <p className="text-sm mt-10 ml-3 md:text-lg  text-gray-300 mb-2">
+                                   I help CEOs & <br /> Founders turn Meta <br />
+                                   (Instagram & Facebook) <br /> into their most scalable{" "}
+                                   <br />
+                                   and profitable revenue
+                                   <br /> engine
+                                 </p>
+                               </div>
+                             </div>
+                           </div>
+                           <div className="max-w-sm bg-[#F4F2EE] rounded-2xl  p-4 mb-3">
+                             <h3 className="font-bold">Consulted 30+</h3>
+                             <p className="text-sm">
+                               D2C Shark Tank brands, VC-backed startups, bootstrapped
+                               founders
+                             </p>
+                           </div>
+           
+                           <div className="flex gap-2 mt-1">
+  {/* Box 1 */}
+  <div className="bg-[#F4F2EE] rounded-2xl p-2 w-28 aspect-square flex flex-col justify-center">
+    <h3 className="text-sm text-shadow-initial">
+      <p className="font-bold text-base">5 + Years </p>
+      of Doing Creative Strategy & Performance Marketing
+    </h3>
+  </div>
 
-                  <div className=" grid-rows-2 mt-1 ml-2 text-white">
-                    <div>
-                      <h3 className="text-lg md:text-xl font-bold mb-2 mr-2 whitespace-nowrap mt-3">
-                        Yuvraj Singh Rajawat
-                      </h3>
-                    </div>
+  {/* Box 2 */}
+  <div className="bg-[#F4F2EE] rounded-2xl p-2 w-28 aspect-square flex flex-col justify-center">
+    <h3 className="text-sm">
+      <p className="font-bold text-base">1000+</p>
+      Meta Ads Ideated, Written & Directed
+    </h3>
+  </div>
 
-                    <div className=" justify-center">
-                      <p className="text-sm mt-10 ml-3 md:text-lg  text-gray-300 mb-2">
-                        I help CEOs & <br /> Founders turn Meta <br />
-                        (Instagram & Facebook) <br /> into their most scalable{" "}
-                        <br />
-                        and profitable revenue
-                        <br /> engine
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="max-w-sm bg-[#F4F2EE] rounded-2xl mb-3 p-4">
-                  <h3 className="font-bold">Consulted 30+</h3>
-                  <p>
-                    D2C Shark Tank brands, VC-backed startups, bootstrapped
-                    founders
-                  </p>
-                </div>
+  {/* Box 3 */}
+  <div className="bg-[#F4F2EE] rounded-2xl p-2 w-28 aspect-square flex flex-col justify-between">
+    <div>
+      <h3 className="text-sm">
+        <p className="font-bold text-base">INR 70 Cr+</p>
+        Ad Spend Managed On Meta Ads
+      </h3>
+    </div>
 
-                <div className="flex grid-cols-3 mt-1">
-                  <div className="max-w-sm bg-[#F4F2EE] rounded-2xl mr-2 p-4">
-                    <h3>
-                      <p className="font-bold">5 + Years </p>
-                      of Doing Creative Strategy & Performance Marketing
-                    </h3>
-                  </div>
+    <div className="flex items-center gap-1 mt-1">
+      <FaMeta size={26} className="text-blue-600" />
+      <span className="text-xl">🚀</span>
+    </div>
+  </div>
+</div>
 
-                  <div className="max-w-sm bg-[#F4F2EE] rounded-2xl mr-2 p-4">
-                    <h3>
-                      <p className="font-bold">1000 </p>
-                      Meta Ads Ideated, Written & Directed
-                    </h3>
-                  </div>
-
-                  <div className="max-w-sm bg-[#F4F2EE] rounded-2xl  p-4">
-                    <h3>
-                      <p className="font-bold">INR 70 Cr+ </p>Ad Spend Managed
-                      On Meta Ads{" "}
-                    </h3>
-
-                    <div className="flex items-center gap-1">
-                      <div className="gap-0">
-                        <FaMeta size={60} className="p-4 text-blue-600" />
-
-                        
-                      </div>
-
-                      <span className="text-2xl">🚀</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                         </div>
+                       </div>
+                     </div>
 <CTA />
           {/* Professional Summary */}
           <div className="bg-white rounded-2xl shadow-lg mt-2 p-8 md:p-12">
