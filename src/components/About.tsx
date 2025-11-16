@@ -28,20 +28,19 @@ const About: React.FC = () => {
            
                              <div className=" grid-rows-2 mt-1 ml-2 text-white">
                                <div>
-                                 <h3 className="text-lg md:text-xl font-bold mb-2 mr-2 whitespace-nowrap mt-3">
+                                 <h3 className="text-sm text-left md:text-md font-bold mb-2 mr-2 whitespace-nowrap ml-3 mt-3">
                                    Yuvraj Singh Rajawat
                                  </h3>
                                </div>
            
-                               <div className=" justify-center">
-                                 <p className="text-sm mt-10 ml-3 md:text-lg  text-gray-300 mb-2">
-                                   I help CEOs & <br /> Founders turn Meta <br />
-                                   (Instagram & Facebook) <br /> into their most scalable{" "}
-                                   <br />
-                                   and profitable revenue
-                                   <br /> engine
-                                 </p>
-                               </div>
+                               <div className="text-left">
+  <p className="text-xs font-semibold mt-10 ml-3 md:text-lg text-gray-300 mb-2">
+    Co Founder & Managing Partner <br /> 
+    At Yuvichaar Funnels <br /><br />
+    Creative Strategist For Meta Ads
+  </p>
+</div>
+
                              </div>
                            </div>
                            <div className="max-w-sm bg-[#F4F2EE] rounded-2xl  p-4 mb-3">

@@ -7,6 +7,7 @@ import WorkWithMe from './components/WorkWithMe';
 import Footer from './components/Footer';
 import CTA from './components/CTAButton';
 import StickyButton from './components/StickyButton';
+import SkillPills from './components/SkillPill';
 import './styles.css';
 
 const App: React.FC = () => {
@@ -18,6 +19,8 @@ const App: React.FC = () => {
         <CompanyGrid/>
 <CTA />
         <WorkWithMe />
+        
+        <SkillPills/>
         <CTA />
         <About />
         
