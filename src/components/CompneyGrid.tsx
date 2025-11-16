@@ -6,7 +6,7 @@ interface Company {
 }
 
 const companies: Company[] = [
-  { name: "King Koil", logo: "https://kingkoil.in/images/logo.png" },
+  { name: "Physics Wallaha", logo: "https://static.pw.live/5eb393ee95fab7468a79d189/GLOBAL_CMS/f10eb934-422b-448f-aa2c-157078acb032.webp" },
   { name: "Skill Nation", logo: "https://skillnation.ai/wp-content/uploads/2023/08/SN_logo-17-1024x415.png" },
   { name: "Mintree", logo: "https://mintree.in/cdn/shop/files/Mintree_Logo_3c7e9336-d594-41ef-abbd-610791bfb90b.png?v=1706126721&width=160" },
   { name: "Karmic_Beauty", logo: "https://karmicbeauty.in/cdn/shop/files/KB_Logo_3_1_1.png?v=1746429952&width=160" },
