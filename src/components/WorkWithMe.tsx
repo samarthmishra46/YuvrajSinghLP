@@ -1,45 +1,45 @@
 import React from "react";
-import VideoCarousel from './AnimatedCard';
-
+import VideoCarousel from "./AnimatedCard";
+import CTA from "./CTAButton";
 const WorkWithMe: React.FC = () => {
   const videoData = [
-  {
-    image: "https://player.vimeo.com/video/1137209274",
-    amount: "₹726,924.31",
-    roas: "12.99",
-  },
-  {
-    image: "https://player.vimeo.com/video/1137209274",
-    amount: "₹512,430.00",
-    roas: "7.84",
-  },
-  {
-    image: "https://player.vimeo.com/video/1137209274",
-    amount: "₹1,12,000.00",
-    roas: "18.20",
-  },
-  {
-    image: "https://player.vimeo.com/video/1137209274",
-    amount: "₹1,12,000.00",
-    roas: "18.20",
-  },
-  {
-    image: "https://player.vimeo.com/video/1137209274",
-    amount: "₹1,12,000.00",
-    roas: "18.20",
-  },
-  {
-    image: "https://player.vimeo.com/video/1137209274",
-    amount: "₹1,12,000.00",
-    roas: "18.20",
-  },
-  {
-    image: "https://res.cloudinary.com/dvxqb1wge/image/upload/v1755442431/photojewels_aojp4i.gif",
-    amount: "₹1,12,000.00",
-    roas: "18.20",
-  },
-];
-
+    {
+      image: "https://player.vimeo.com/video/1137209274",
+      amount: "₹726,924.31",
+      roas: "12.99",
+    },
+    {
+      image: "https://player.vimeo.com/video/1137209274",
+      amount: "₹512,430.00",
+      roas: "7.84",
+    },
+    {
+      image: "https://player.vimeo.com/video/1137209274",
+      amount: "₹1,12,000.00",
+      roas: "18.20",
+    },
+    {
+      image: "https://player.vimeo.com/video/1137209274",
+      amount: "₹1,12,000.00",
+      roas: "18.20",
+    },
+    {
+      image: "https://player.vimeo.com/video/1137209274",
+      amount: "₹1,12,000.00",
+      roas: "18.20",
+    },
+    {
+      image: "https://player.vimeo.com/video/1137209274",
+      amount: "₹1,12,000.00",
+      roas: "18.20",
+    },
+    {
+      image:
+        "https://res.cloudinary.com/dvxqb1wge/image/upload/v1755442431/photojewels_aojp4i.gif",
+      amount: "₹1,12,000.00",
+      roas: "18.20",
+    },
+  ];
 
   const services = [
     {
@@ -115,29 +115,25 @@ const WorkWithMe: React.FC = () => {
   };
 
   return (
-    <section
-  id="work"
-  className="py-16 bg-white max-w-6xl mx-auto"
->
-
+    <>
+    <section id="work" className=" bg-white max-w-6xl mx-auto">
       {/* SERVICES SECTION */}
       <div className=" bg-[#F4F2EE] mr-2 ml-2  md:ml-20 md:mr-12 rounded-2xl justify-center shadow-lg p-4 ">
         {services.map((service, index) => (
           <div key={index} className="mb-16 ">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <div className="text-left md:text-center mb-12">
+              <h2 className="text-2xl md:text-5xl font-bold mb-4">
                 {service.title}
               </h2>
-              <p className="text-lg md:text-xl font-semibold mb-4 max-w-3xl mx-auto">
+              <p className="text-sm md:text-2xl font-semibold mb-4 max-w-3xl mx-auto">
                 {service.description}
               </p>
               <p className="text-gray-600 max-w-2xl mx-auto mb-8">
                 {service.details}
               </p>
-              
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6 mb-12 " >
+            <div className="grid md:grid-cols-3 gap-6 mb-12 ">
               {service.benefits.map((benefit, idx) => (
                 <div
                   key={idx}
@@ -152,7 +148,7 @@ const WorkWithMe: React.FC = () => {
           </div>
         ))}
       </div>
-<br />
+      <br />
       {/* FAQ SECTION */}
       <div className="bg-[#404348] text-white mr-2 ml-2  md:ml-20 md:mr-12 rounded-2xl justify-center shadow-lg p-4 mb-10">
         <h2 className="text-2xl font-bold text-center mb-8">
@@ -185,36 +181,43 @@ const WorkWithMe: React.FC = () => {
           ))}
         </div>
       </div>
-    
+
       {/* PROOF SECTION */}
       <div className="mb-2">
         <h2 className="text-3xl md:text-4xl font-bold text-left md:text-center mb-4 p-4">
           {proofSection.title}
         </h2>
-        <p className="text-center text-gray-600 mb-2">
+        <p className="text-left md:text-center text-gray-600 mb-2">
           {proofSection.subtitle}
         </p>
-        
       </div>
 
-              <VideoCarousel items={videoData} />
+      <VideoCarousel items={videoData} />
 
-      
+      <CTA />
 
       {/* CREATIVE STRATEGY SECTION */}
-      <div className="mb-16 bg-[#F4F2EE] mr-2 ml-2 md:mr-12 md:ml-12 rounded-3xl shadow-2xl p-6 md:p-10 lg:p-12">
+      <div className="mb-16 bg-[#F4F2EE] mt-4 mr-2 ml-2 md:mr-12 md:ml-12 rounded-3xl shadow-2xl p-6 md:p-10 lg:p-12">
         <h2 className="text-3xl md:text-4xl lg:text-5xl text-center font-extrabold mb-8 md:mb-10 text-gray-900 leading-tight">
-          What Exactly Is A <span className=" text-[#8400FF] drop-shadow-lg">Creative Strategy</span>?
+          What Exactly Is A{" "}
+          <span className=" text-[#8400FF] drop-shadow-lg">
+            Creative Strategy
+          </span>
+          ?
         </h2>
 
         <div className="max-w-4xl mx-auto">
           <p className="text-lg md:text-xl lg:text-2xl mb-4 text-gray-800 font-medium leading-relaxed">
-            The only thing the customer actually sees is your <span className="font-bold text-gray-900">creative</span>.
+            The only thing the customer actually sees is your{" "}
+            <span className="font-bold text-gray-900">creative</span>.
           </p>
           <p className="text-lg md:text-xl lg:text-2xl mb-6 text-gray-800 font-medium leading-relaxed">
-            And one great video ad can <span className="font-bold text-white bg-gray-900 px-2 py-1 rounded">change your revenues overnight</span>
+            And one great video ad can{" "}
+            <span className="font-bold text-white bg-gray-900 px-2 py-1 rounded">
+              change your revenues overnight
+            </span>
           </p>
-          
+
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 mb-8 shadow-xl">
             <p className="text-xl md:text-2xl font-bold mb-6 text-gray-900 text-center">
               Like this one 👇
@@ -232,63 +235,83 @@ const WorkWithMe: React.FC = () => {
                 alt="arrow"
                 className="absolute -right-8 md:-right--1 -top-4 md:-top-30 w-12 md:w-16 rotate-[10deg] drop-shadow-lg"
               />
-              
             </div>
             <p className="text-lg md:text-xl leading-relaxed space-y-4">
               <span className="block mb-4 mt-1 text-xl md:text-2xl font-bold text-[#8400FF] ">
                 Look at this video ad.
               </span>
-              
+
               <span className="block mb-3">
-                💰 It generated <span className="font-bold text-[#8400FF]  text-xl md:text-2xl">₹17,52,000</span> in sales in just <span className="font-bold">two weeks</span> at a ROAS of <span className="font-bold text-green-400 text-xl md:text-2xl">24</span>
+                💰 It generated{" "}
+                <span className="font-bold text-[#8400FF]  text-xl md:text-2xl">
+                  ₹17,52,000
+                </span>{" "}
+                in sales in just <span className="font-bold">two weeks</span> at
+                a ROAS of{" "}
+                <span className="font-bold text-green-400 text-xl md:text-2xl">
+                  24
+                </span>
               </span>
-              
+
               <span className="block mb-3">
-                🎯 It starts with the <span className="font-semibold text-[#8400FF] ">guilt trigger</span> - a kid zoned out on a phone.
+                🎯 It starts with the{" "}
+                <span className="font-semibold text-[#8400FF] ">
+                  guilt trigger
+                </span>{" "}
+                - a kid zoned out on a phone.
               </span>
-              
+
               <span className="block mb-4">
-                ✅ And ends with a <span className="font-semibold text-[#8400FF] ">relatable mom</span> telling you exactly what to do next.
+                ✅ And ends with a{" "}
+                <span className="font-semibold text-[#8400FF] ">
+                  relatable mom
+                </span>{" "}
+                telling you exactly what to do next.
               </span>
-              
+
               <span className="block font-bold text-2xl mb-4">
-                And the format isn’t typical UGC 
-it’s AGC (Actor-Generated Content):
+                And the format isn't typical UGC it's AGC (Actor-Generated
+                Content):
               </span>
 
-              
-
               <span className="block mb-4">
-                Scripted like an ad, shot like UGC, performed by a relatable mom, but strategically crafted to hit psychology, pacing, hooks, and objections with precision.
+                Scripted like an ad, shot like UGC, performed by a relatable
+                mom, but strategically crafted to hit psychology, pacing, hooks,
+                and objections with precision.
               </span>
               <span className="block mb-4">
-                It feels real, but it converts like a high-performance direct-response ad.
+                It feels real, but it converts like a high-performance
+                direct-response ad.
               </span>
             </p>
           </div>
 
-         
-
-          <div className="text-center space-y-6 bg-white/90 backdrop-blur-sm rounded-2xl p-8 md:p-10 shadow-xl">
+          <div className="text-left md:text-center space-y-6 bg-white/90 backdrop-blur-sm rounded-2xl p-8 md:p-10 shadow-xl">
             <p className="font-black text-3xl md:text-4xl lg:text-5xl text-gray-900 leading-tight">
-              This is <span className="bg-gradient-to-r from-[#f2a710] to-[#f8c654] bg-clip-text text-transparent">Creative Strategy</span>
+              This is{" "}
+              <span className="bg-gradient-to-r from-[#f2a710] to-[#f8c654] bg-clip-text text-transparent">
+                Creative Strategy
+              </span>
             </p>
-            
+
             <div className="w-24 h-1 bg-gradient-to-r from-[#f2a710] to-[#f8c654] mx-auto rounded-full"></div>
-            
+
             <p className="text-xl md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto font-medium">
-              Creative strategy defines <span className="font-bold text-gray-900">what ads to make</span>, <span className="font-bold text-gray-900">what to say</span>, and <span className="font-bold text-gray-900">how to show it</span> so people actually stop, listen, and buy.
+              Creative strategy defines{" "}
+              <span className="font-bold text-gray-900">what ads to make</span>,{" "}
+              <span className="font-bold text-gray-900">what to say</span>, and{" "}
+              <span className="font-bold text-gray-900">how to show it</span> so
+              people actually stop, listen, and buy.
             </p>
           </div>
         </div>
-        
       </div>
 
       {/* PROCESS SECTION */}
 
       <div className="bg-[#404348] text-white mr-2 ml-2  md:ml-20 md:mr-12 rounded-2xl justify-center shadow-lg p-4 mb-10">
         <h2 className="text-2xl font-bold text-center mb-8">
-           My Process Behind Building Million Dollar Creative Strategies
+          My Process Behind Building Million Dollar Creative Strategies
           Consistently
         </h2>
 
@@ -303,7 +326,9 @@ it’s AGC (Actor-Generated Content):
                   {item.step}
                 </div>
                 <div>
-                  <h3 className="font-bold text-gray-600 text-xl mb-3">{item.title}</h3>
+                  <h3 className="font-bold text-gray-600 text-xl mb-3">
+                    {item.title}
+                  </h3>
                   <p className="text-gray-600">{item.description}</p>
                 </div>
               </div>
@@ -311,34 +336,8 @@ it’s AGC (Actor-Generated Content):
           ))}
         </div>
       </div>
-
-
-      
-
-      {/* CTA SECTION */}
-      <div className="text-center">
-        <h2 className="text-3xl font-bold mb-6">
-          Starting Today, You'll Never Have To Worry About Meta Ads Ever Again!
-        </h2>
-
-        <button type="button" className="btn-primary mx-auto text-lg flex items-center gap-2">
-          <span>Work With Me</span>
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M17 8l4 4m0 0l-4 4m4-4H3"
-            />
-          </svg>
-        </button>
-      </div>
     </section>
+    </>
   );
 };
 

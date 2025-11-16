@@ -1,23 +1,19 @@
 import React from "react";
 import { FaRocket, FaMeta } from "react-icons/fa6";
+import CTA from "./CTAButton"
 const Hero: React.FC = () => {
-  const scrollToWork = () => {
-    const element = document.getElementById("work");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  
 
   return (
     <section
       id="home"
-      className="pt-24 pb-12 bg-gradient-to-b from-purple-50 to-white"
+      className="pt-24 pb-10 bg-gradient-to-b from-purple-50 to-white"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Two column layout: text + photo. Stacks on small screens (375px) */}
         <div className="grid grid-cols-1 gap-4 items-center">
           {/* Left: Text and CTAs */}
-          <div className="order-2 md:order-1 text-center md:text-left">
+          <div className="text-center md:text-left">
             <div className="mb-3 flex justify-center md:justify-start">
               <div className="w-16 h-1 bg-gray-300 rounded-full"></div>
             </div>
@@ -36,32 +32,15 @@ const Hero: React.FC = () => {
               Meta Ads For You
             </h1>
 
-            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center ">
-              <button onClick={scrollToWork} className="btn-primary mb-1">
-                Work With Me
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </button>
-            </div>
+            <CTA/>
             
-            <p className="text-sm text-center text-gray-600 mb-3">
+            <p className="text-sm text-center text-gray-600 mb-1 md:mb-20">
               Let Me Ideate Your Next Ad Campaign On Meta
             </p>
           </div>
 
           {/*Photo / Profile card */}
-          <div className="order-2 md:order-2 flex justify-center">
+          <div className=" flex justify-center mt-1 mb-4 md:mb-22">
             {/* Scale wrapper */}
             <div className="md:scale-[1.25]">
               <div className="w-full max-w-sm">
@@ -135,6 +114,7 @@ const Hero: React.FC = () => {
               </div>
             </div>
           </div>
+          <CTA/>
         </div>
       </div>
     </section>

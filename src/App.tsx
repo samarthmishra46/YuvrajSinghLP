@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import WorkWithMe from './components/WorkWithMe';
 import Footer from './components/Footer';
+import CTA from './components/CTAButton';
 import './styles.css';
 
 const App: React.FC = () => {
@@ -14,7 +15,9 @@ const App: React.FC = () => {
       <main>
         <Hero />
         <CompanyGrid/>
+<CTA />
         <WorkWithMe />
+        <CTA />
         <About />
         
       </main>

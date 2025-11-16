@@ -1,9 +1,9 @@
 import React from 'react';
 import { FaRocket, FaMeta } from "react-icons/fa6";
-
+import CTA from "./CTAButton"
 const About: React.FC = () => {
   return (
-    <section id="about" className="py-16 bg-gradient-to-b from-white to-purple-50">
+    <section id="about" className=" bg-gradient-to-b from-white to-purple-50">
       <div className="section-container">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
@@ -12,7 +12,7 @@ const About: React.FC = () => {
           </div>
           <br />
 
-           <div className="order-2 md:order-2 flex justify-center md:mt-10 mb-2 md:mb-32">
+           <div className="flex justify-center md:mt-10 mb-2 md:mb-32">
             {/* Scale wrapper */}
             <div className="md:scale-[1.25]">
               <div className="w-full max-w-sm">
@@ -86,9 +86,9 @@ const About: React.FC = () => {
               </div>
             </div>
           </div>
-
+<CTA />
           {/* Professional Summary */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+          <div className="bg-white rounded-2xl shadow-lg mt-2 p-8 md:p-12">
   <h3 className="text-3xl font-bold mb-6">Professional Summary</h3>
 
   <div className="space-y-4 text-gray-700 leading-relaxed">
@@ -129,7 +129,7 @@ const About: React.FC = () => {
     </p>
 
     <p className="text-lg">
-      I’ve built my entire career on one ability:  
+      I've built my entire career on one ability:  
       <span className="font-semibold">to turn creative chaos into predictable growth.</span>
     </p>
 

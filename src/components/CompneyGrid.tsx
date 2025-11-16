@@ -28,13 +28,13 @@ const companies: Company[] = [
 
 const CompanyGrid: React.FC = () => {
   return (
-    <div className="py-10 bg-gray-50 rounded-lg shadow overflow-hidden md:mt-12">
-      <p className="text-2xl font-semibold sm:text-4xl md:text-5xl  mb-2 font-bold text-center justify-center"> Brands I’ve Worked With
+    <div className="py-10 bg-gray-50 rounded-lg shadow overflow-hidden mb-8 ">
+      <p className="text-2xl font-semibold  md:text-5xl  mb-2 font-bold text-center justify-center"> Brands I’ve Worked With
 
 </p>
 <br />
 
-       <div className="grid grid-cols-5 gap-4 items-center max-w-6xl mx-auto px-4">
+       <div className="grid grid-cols-5 gap-1 md:gap-4 items-center max-w-6xl mx-auto px-1">
         {companies.map((company) => (
           <div
             key={company.name}
@@ -48,6 +48,7 @@ const CompanyGrid: React.FC = () => {
           </div>
         ))}
       </div>
+      
     </div>
   );
 };
