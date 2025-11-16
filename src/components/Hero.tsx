@@ -81,7 +81,7 @@ const Hero: React.FC = () => {
 
                 <div className="flex gap-2 mt-1">
   {/* Box 1 */}
-  <div className="bg-[#F4F2EE] rounded-2xl p-2 w-28 aspect-square flex flex-col justify-center">
+  <div className="bg-[#F4F2EE] rounded-2xl p-1 w-30 aspect-square flex flex-col justify-center">
     <h3 className="text-sm text-shadow-initial">
       <p className="font-bold text-base">5 + Years </p>
       of Doing Creative Strategy & Performance Marketing
@@ -89,7 +89,7 @@ const Hero: React.FC = () => {
   </div>
 
   {/* Box 2 */}
-  <div className="bg-[#F4F2EE] rounded-2xl p-2 w-28 aspect-square flex flex-col justify-center">
+  <div className="bg-[#F4F2EE] rounded-2xl p-1 w-30 aspect-square flex flex-col justify-center">
     <h3 className="text-sm">
       <p className="font-bold text-base">1000+</p>
       Meta Ads Ideated, Written & Directed
@@ -97,7 +97,7 @@ const Hero: React.FC = () => {
   </div>
 
   {/* Box 3 */}
-  <div className="bg-[#F4F2EE] rounded-2xl p-2 w-28 aspect-square flex flex-col justify-between">
+  <div className="bg-[#F4F2EE] rounded-2xl p-1 w-30 aspect-square flex flex-col justify-between">
     <div>
       <h3 className="text-sm">
         <p className="font-bold text-base">INR 70 Cr+</p>
@@ -115,7 +115,9 @@ const Hero: React.FC = () => {
               </div>
             </div>
           </div>
+          <div className="text-lg md:text-xl">
           <CTA/>
+          </div>
         </div>
       </div>
     </section>
