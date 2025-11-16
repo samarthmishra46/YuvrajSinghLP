@@ -7,11 +7,11 @@ const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="pt-24 pb-10 bg-gradient-to-b from-purple-50 to-white"
+      className="pt-24 pb-10 bg-white"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Two column layout: text + photo. Stacks on small screens (375px) */}
-        <div className="grid grid-cols-1 gap-4 items-center">
+        <div className="grid grid-cols-1 gap-4 items-center ">
           {/* Left: Text and CTAs */}
           <div className="text-center md:text-left">
             <div className="mb-3 flex justify-center md:justify-start">
@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
 
             <CTA/>
             
-            <p className="text-sm text-center text-gray-600 mb-1 md:mb-20">
+            <p className="text-sm text-center text-[#404141] font-bold mt-0.5 mb-1 md:mb-20">
               Let Me Ideate Your Next Ad Campaign On Meta
             </p>
           </div>
@@ -73,30 +73,30 @@ const Hero: React.FC = () => {
                 </div>
                 <div className="max-w-sm bg-[#F4F2EE] rounded-2xl  p-4 mb-3">
                   <h3 className="font-bold">Consulted 30+</h3>
-                  <p>
+                  <p className="text-sm">
                     D2C Shark Tank brands, VC-backed startups, bootstrapped
                     founders
                   </p>
                 </div>
 
                 <div className="flex grid-cols-3 mt-1">
-                  <div className="max-w-sm bg-[#F4F2EE] rounded-2xl mr-2  p-4">
-                    <h3>
-                      <p className="font-bold ">5 + Years </p>
+                  <div className="max-w-sm bg-[#F4F2EE] rounded-2xl mr-2  p-2">
+                    <h3 className="text-sm text-shadow-initial">
+                      <p className="font-bold text-base">5 + Years </p>
                       of Doing Creative Strategy & Performance Marketing
                     </h3>
                   </div>
 
-                  <div className="max-w-sm bg-[#F4F2EE] rounded-2xl mr-2 p-4">
-                    <h3>
-                      <p className="font-bold">1000+</p>
+                  <div className="max-w-sm bg-[#F4F2EE] rounded-2xl mr-2 p-2">
+                    <h3 className="text-sm">
+                      <p className="font-bold text-base">1000+</p>
                       Meta Ads Ideated, Written & Directed
                     </h3>
                   </div>
 
                   <div className="max-w-sm bg-[#F4F2EE] rounded-2xl  p-4">
-                    <h3>
-                      <p className="font-bold">INR 70 Cr+ </p>Ad Spend Managed
+                    <h3 className="text-sm">
+                      <p className="font-bold text-base">INR 70 Cr+ </p>Ad Spend Managed
                       On Meta Ads{" "}
                     </h3>
 

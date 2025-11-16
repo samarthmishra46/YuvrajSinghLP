@@ -116,7 +116,7 @@ const WorkWithMe: React.FC = () => {
 
   return (
     <>
-    <section id="work" className=" bg-white max-w-6xl mx-auto">
+    <section id="work" className=" bg-white max-w-6xl mx-auto mt-8 md:mt-1">
       {/* SERVICES SECTION */}
       <div className=" bg-[#F4F2EE] mr-2 ml-2  md:ml-20 md:mr-12 rounded-2xl justify-center shadow-lg p-4 ">
         {services.map((service, index) => (
@@ -184,10 +184,10 @@ const WorkWithMe: React.FC = () => {
 
       {/* PROOF SECTION */}
       <div className="mb-2">
-        <h2 className="text-3xl md:text-4xl font-bold text-left md:text-center mb-4 p-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-left md:text-center mb-1 p-4">
           {proofSection.title}
         </h2>
-        <p className="text-left md:text-center text-gray-600 mb-2">
+        <p className="text-left p-4 md:text-center text-gray-600 mb-2">
           {proofSection.subtitle}
         </p>
       </div>

@@ -11,7 +11,7 @@ const CTA: React.FC = () => {
     <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
       <button
         onClick={handleButtonClick}
-        className="flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 transition-all "
+        className="flex items-center gap-2 btn-primary "
       >
         Work With Me
         <svg
