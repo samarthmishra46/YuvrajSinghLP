@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold gradient-text">Yuvraj Singh Rajwat</h1>
+            <h1 className="text-md md:text-xl font-bold gradient-text">Yuvraj Singh Rajwat</h1>
           </div>
 
           {/* Desktop Navigation */}

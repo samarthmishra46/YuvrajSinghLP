@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play } from "lucide-react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
@@ -8,6 +8,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 // --------------------
 interface VideoCardProps {
   image: string; 
+  video?: string; // Optional video URL
   amount: string;
   roas: string;
 }
@@ -17,9 +18,23 @@ interface VideoCardProps {
 // --------------------
 const VideoCard: React.FC<
   VideoCardProps & { isPlaying: boolean; onPlay: () => void }
-> = ({ image, amount, roas, isPlaying, onPlay }) => {
+> = ({ image, video, amount, roas, isPlaying, onPlay }) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [muted, setMuted] = useState(true);
 
-  const isVimeo = image.includes("player.vimeo.com");
+  const handleUnmute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = false;
+      setMuted(false);
+    }
+  };
+
+  const handleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = true;
+      setMuted(true);
+    }
+  };
 
   return (
     <motion.div
@@ -51,35 +66,31 @@ const VideoCard: React.FC<
       {/* VIDEO / THUMBNAIL */}
       <div className="w-full aspect-[9/16] relative bg-black">
         
-        {/* When NOT playing → show thumbnail */}
-        {!isPlaying ? (
-          <div className="relative w-full h-full cursor-pointer" onClick={onPlay}>
-            <img src={image} className="w-full h-full object-cover" />
+        <video
+          ref={videoRef}
+          className="w-full h-full object-cover"
+          src={video || image}
+          autoPlay
+          loop
+          muted={muted}
+          playsInline
+        />
 
-            {/* Play Button only for Vimeo */}
-            {isVimeo && (
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="bg-white/70 w-20 h-20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                  <Play size={40} className="text-black ml-1" />
-                </div>
-              </div>
-            )}
-          </div>
-        ) : (
-          
-          // When playing → load Vimeo iframe
-          isVimeo ? (
-            <iframe
-              src={`${image}?autoplay=1`}
-              className="w-full h-full"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          ) : (
-
-            // If not Vimeo (= GIF), just show GIF
-            <img src={image} className="w-full h-full object-cover" />
-          )
+        {muted && (
+          <button
+            onClick={handleUnmute}
+            className="absolute inset-0 flex items-center justify-center bg-black/40 text-white text-sm px-4 py-2"
+          >
+            Tap to Unmute 🔊
+          </button>
+        )}
+        {!muted && (
+          <button
+            onClick={handleMute}
+            className="absolute bottom-4 right-4 bg-black/60 text-white text-xs px-3 py-1.5 rounded-lg hover:bg-black/80 transition-colors"
+          >
+            🔇 Mute
+          </button>
         )}
       </div>
 
@@ -135,6 +146,7 @@ export const VideoCarousel: React.FC<CarouselProps> = ({ items }) => {
           <VideoCard
             key={currentIndex}
             image={items[currentIndex].image}
+            video={items[currentIndex].video}
             amount={items[currentIndex].amount}
             roas={items[currentIndex].roas}
             isPlaying={isPlaying}
