@@ -55,10 +55,23 @@ const WorkWithMe: React.FC = () => {
   },
   {
     image: "",
-    video: "https://res.cloudinary.com/do7stdrs3/video/upload/v1763378127/Ad2_-2_1_1_vbtbjk.mov",
+    video: "https://res.cloudinary.com/do7stdrs3/video/upload/v1763392028/BINNI_script_3_final_1_1_cfq0gf.mp4",
     amount: "₹3,12,480.60",
     roas: "7.92",
   },
+  {
+    image: "",
+    video: "https://res.cloudinary.com/do7stdrs3/video/upload/v1763391287/PHL_jptyxu.mp4",
+    amount: "₹2,14,780.40",
+    roas: "8.92",
+  },
+  {
+    image: "",
+    video: "https://res.cloudinary.com/do7stdrs3/video/upload/v1763391889/pj_script_7_final_1_bdpu8y.mp4",
+    amount: "₹3,28,970.40",
+    roas: "9.87",
+  },
+  
 ];
 
 
