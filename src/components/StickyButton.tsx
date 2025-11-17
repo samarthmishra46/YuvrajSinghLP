@@ -6,6 +6,10 @@ const StickyButton: React.FC = () => {
    const navigate = useNavigate();
   
     const handleButtonClick = () => {
+      // Track Lead event in Meta Pixel
+      if (window.fbq) {
+        window.fbq("track", "Lead");
+      }
       navigate("https://rzp.io/rzp/M4TBjei"); //  actual route
     };
   

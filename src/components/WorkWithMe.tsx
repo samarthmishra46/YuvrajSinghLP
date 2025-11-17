@@ -23,44 +23,44 @@ const WorkWithMe: React.FC = () => {
   };
 
   const videoData = [
-    {
-      image: "",
-      video: "https://res.cloudinary.com/do7stdrs3/video/upload/v1763375963/Ad_1_2_mmjczo.mp4",
-      amount: "₹726,924.31",
-      roas: "12.99",
-    },
-    {
-      image: "",
-      video: "https://res.cloudinary.com/do7stdrs3/video/upload/v1763377425/Ad_3_1_tmrsmd.mp4",
-      amount: "₹512,430.00",
-      roas: "7.84",
-    },
-    {
-      image: "",
-      video: "https://res.cloudinary.com/do7stdrs3/video/upload/v1763377596/YHL_Collagen-1_2_lely9z.mp4",
-      amount: "₹1,12,000.00",
-      roas: "18.20",
-    },
-    {
-      image: "",
-      video: "https://res.cloudinary.com/do7stdrs3/video/upload/v1763377771/Ad_1_short_version_hqdfd8.mp4",
-      amount: "₹1,12,000.00",
-      roas: "18.20",
-    },
-    {
-      image: "",
-      video: "https://res.cloudinary.com/do7stdrs3/video/upload/v1763377812/fictales_script_2_1_siocbj.mp4",
-      amount: "₹1,12,000.00",
-      roas: "18.20",
-    },
-    {
-      image: "",
-      video: "https://res.cloudinary.com/do7stdrs3/video/upload/v1763378127/Ad2_-2_1_1_vbtbjk.mov",
-      amount: "₹1,12,000.00",
-      roas: "18.20",
-    },
-   
-  ];
+  {
+    image: "",
+    video: "https://res.cloudinary.com/do7stdrs3/video/upload/v1763375963/Ad_1_2_mmjczo.mp4",
+    amount: "₹893,540.22",
+    roas: "14.32",
+  },
+  {
+    image: "",
+    video: "https://res.cloudinary.com/do7stdrs3/video/upload/v1763377425/Ad_3_1_tmrsmd.mp4",
+    amount: "₹389,274.50",
+    roas: "6.41",
+  },
+  {
+    image: "",
+    video: "https://res.cloudinary.com/do7stdrs3/video/upload/v1763377596/YHL_Collagen-1_2_lely9z.mp4",
+    amount: "₹1,58,320.00",
+    roas: "21.47",
+  },
+  {
+    image: "",
+    video: "https://res.cloudinary.com/do7stdrs3/video/upload/v1763377771/Ad_1_short_version_hqdfd8.mp4",
+    amount: "₹2,04,910.75",
+    roas: "9.82",
+  },
+  {
+    image: "",
+    video: "https://res.cloudinary.com/do7stdrs3/video/upload/v1763377812/fictales_script_2_1_siocbj.mp4",
+    amount: "₹74,560.00",
+    roas: "11.33",
+  },
+  {
+    image: "",
+    video: "https://res.cloudinary.com/do7stdrs3/video/upload/v1763378127/Ad2_-2_1_1_vbtbjk.mov",
+    amount: "₹3,12,480.60",
+    roas: "7.92",
+  },
+];
+
 
   const services = [
     {
@@ -262,12 +262,12 @@ const WorkWithMe: React.FC = () => {
         </button>
       )}
       {!muted && (
-        <button
-          onClick={handlemute}
-          className="absolute inset-0 flex items-end justify-center text-white px-4 py-2 rounded-xl"
-        >
-          Tap to mute 🔊
-        </button>
+         <button
+            onClick={handlemute}
+            className="absolute bottom-4 right-4 bg-black/60 text-white text-xs px-3 py-1.5 rounded-lg hover:bg-black/80 transition-colors"
+          >
+            🔇 Mute
+          </button>
       )}
 
               <img
