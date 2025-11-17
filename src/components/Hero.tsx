@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
           {/* Left: Text and CTAs */}
           <div className="text-center md:text-left">
             <div className="mb-3 flex justify-center md:justify-start">
-              <div className="w-16 h-1 bg-gray-300 rounded-full"></div>
+              
             </div>
 
             <h1 className="text-2xl font-semibold sm:text-4xl md:text-5xl  mb-6 leading-tight text-left  md:text-center p-4">
